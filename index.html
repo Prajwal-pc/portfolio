@@ -14,6 +14,12 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+  <div class="intro-loader" id="introLoader" aria-hidden="true">
+    <div class="intro-loader__core"></div>
+    <div class="intro-loader__line"></div>
+    <p>Booting portfolio experience</p>
+  </div>
+
   <div class="page-shell">
     <div class="noise-mask"></div>
     <div class="ambient ambient-one"></div>
@@ -21,33 +27,48 @@
     <div class="ambient ambient-three"></div>
     <div class="grid-mask"></div>
     <div class="scanline"></div>
+    <div class="cursor-glow"></div>
+    <div class="progress-rail" aria-hidden="true"><span id="progressBar"></span></div>
 
     <header class="topbar">
       <a class="brand" href="#hero">
         <span class="brand-mark"></span>
         <span>Prajwal P C</span>
       </a>
-      <nav class="nav">
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="siteNav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#journey">Journey</a>
+        <a href="#learning">Learning</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero reveal" id="hero">
+      <section class="hero reveal active-section" id="hero" data-section>
         <div class="hero-copy">
           <p class="eyebrow">Cyber Security Portfolio</p>
-          <h1>Building threat-aware systems with a calm blue-team mindset.</h1>
+          <h1 class="hero-title">
+            <span class="hero-line">Building threat-aware systems</span>
+            <span class="hero-line">with a futuristic</span>
+            <span class="hero-line shimmer-text">blue-team mindset.</span>
+          </h1>
           <p class="hero-text">
             I'm Prajwal P C, an MCA student focused on intrusion detection, network monitoring,
-            anomaly analysis, and intelligent security dashboards. I enjoy turning raw security
-            signals into interfaces that feel immediate, visual, and useful.
+            anomaly analysis, and intelligent security dashboards. I like building security tools
+            that feel sharp, visual, and useful instead of cold or difficult to read.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#projects">Explore Work</a>
-            <a class="button secondary" href="mailto:Prajwalpanthu@gmail.com">Contact Me</a>
+            <a class="button secondary" href="./assets/Prajwal-PC-Cyber-Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
           </div>
           <div class="hero-badges">
             <span>Threat Analytics</span>
@@ -76,93 +97,145 @@
             <div class="hud-label bottom">LIVE SIGNAL MODEL</div>
           </div>
 
-          <div class="terminal-card tilt-card">
-            <div class="terminal-head">
-              <span></span>
-              <span></span>
-              <span></span>
+          <div class="hero-side-grid">
+            <div class="terminal-card tilt-card">
+              <div class="terminal-head">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="terminal-body">
+                <p><span class="prompt">role</span> Entry-Level Cyber Security / SOC Analyst</p>
+                <p><span class="prompt">focus</span> Intrusion Detection, Threat Analytics, Log Patterns</p>
+                <p><span class="prompt">education</span> MCA at RV Institute Of Technology And Management</p>
+                <p><span class="prompt">strength</span> Security dashboards with practical ML-backed insights</p>
+              </div>
             </div>
-            <div class="terminal-body">
-              <p><span class="prompt">role</span> Entry-Level Cyber Security / SOC Analyst</p>
-              <p><span class="prompt">focus</span> Intrusion Detection, Threat Analytics, Log Patterns</p>
-              <p><span class="prompt">education</span> MCA at RV Institute Of Technology And Management</p>
-              <p><span class="prompt">strength</span> Security dashboards with practical ML-backed insights</p>
-            </div>
-          </div>
 
-          <div class="signal-stack">
-            <article class="signal-card tilt-card">
-              <span class="signal-label">Current Direction</span>
-              <strong>Defensive Security</strong>
-              <p>Network monitoring, IDS concepts, anomaly detection, alert visualization.</p>
-            </article>
-            <article class="signal-card tilt-card">
-              <span class="signal-label">Working Style</span>
-              <strong>Build + Explain</strong>
-              <p>Technical systems paired with neat dashboards, reports, and user-facing clarity.</p>
-            </article>
+            <div class="mini-profile-card tilt-card">
+              <img src="./assets/profile-frame.svg" alt="Stylized profile frame illustration">
+              <div>
+                <span class="signal-label">Portfolio Persona</span>
+                <strong>Builder of security-first interfaces</strong>
+                <p>Focused on turning alerts, patterns, and risk indicators into readable systems.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="highlights reveal">
+      <section class="highlights reveal" data-section>
         <article class="highlight-card tilt-card">
-          <span class="highlight-value" data-count="3">0</span>
-          <p>Featured security and software projects</p>
+          <span class="highlight-value" data-count="4">0</span>
+          <p>Featured project stories across security, AI, and full-stack work</p>
         </article>
         <article class="highlight-card tilt-card">
-          <span class="highlight-value" data-count="5">0</span>
-          <p>Core cyber focus areas from monitoring to threat analytics</p>
+          <span class="highlight-value" data-count="10">0</span>
+          <p>Practical cyber concepts from monitoring to attack visualization</p>
         </article>
         <article class="highlight-card tilt-card">
           <span class="highlight-value" data-count="2">0</span>
-          <p>Public GitHub repositories already available online</p>
+          <p>Public GitHub repositories already online and ready to explore</p>
         </article>
       </section>
 
-      <section class="section reveal" id="projects">
+      <section class="section reveal" id="about" data-section>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">About Me</p>
+            <h2>I enjoy making complex systems feel visible, understandable, and actionable.</h2>
+          </div>
+          <p class="section-side-copy">
+            My strongest interests are cyber security, anomaly detection, and dashboard-driven
+            problem solving. I’m especially drawn to systems that watch for unusual behavior,
+            surface it clearly, and help people react faster.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel-card tilt-card">
+            <span class="signal-label">How I Work</span>
+            <h3>Build + Explain + Visualize</h3>
+            <p>
+              I like projects where there is both a technical core and a human-facing layer.
+              That means not only detecting a threat or training a model, but also presenting
+              the result with dashboards, timelines, reports, and better decision signals.
+            </p>
+          </article>
+          <article class="panel-card tilt-card">
+            <span class="signal-label">What I’m Looking For</span>
+            <h3>Cyber Security, SOC, and Security Engineering Roles</h3>
+            <p>
+              I’m currently looking for opportunities where I can contribute to monitoring,
+              alerting, threat analysis, defensive tooling, and security-focused product building
+              while continuing to grow in practical blue-team workflows.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="projects" data-section>
         <div class="section-heading">
           <p class="eyebrow">Featured Projects</p>
           <h2>Projects designed around live signals, clear interfaces, and practical outcomes.</h2>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-grid rich-projects">
           <article class="project-card featured tilt-card">
-            <div class="project-accent"></div>
-            <p class="project-tag">Threat Analytics</p>
-            <h3>PhishScope AI</h3>
-            <p>
-              A phishing prediction platform with a custom web interface, CSV scoring workflows,
-              and a three-stage risk classifier for low, medium, and high threat predictions.
-            </p>
-            <ul class="project-points">
-              <li>Built with Python, Flask, scikit-learn, and a custom browser UI</li>
-              <li>Supports manual scoring, CSV uploads, metrics downloads, and prediction exports</li>
-              <li>Designed for demonstration, experimentation, and security workflow storytelling</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Prajwal-pc/phishscopeAi" target="_blank" rel="noreferrer">GitHub Repo</a>
+            <div class="project-visual">
+              <img src="./assets/project-phishscope.svg" alt="PhishScope AI dashboard mockup">
+            </div>
+            <div class="project-content">
+              <p class="project-tag">Threat Analytics</p>
+              <h3>PhishScope AI</h3>
+              <p>
+                A phishing prediction platform with a custom web interface, CSV scoring workflows,
+                and a three-stage risk classifier for low, medium, and high threat predictions.
+              </p>
+              <ul class="project-points">
+                <li>Built with Python, Flask, scikit-learn, and a custom browser UI</li>
+                <li>Supports manual scoring, CSV uploads, metrics downloads, and prediction exports</li>
+                <li>Designed to make security predictions easier to inspect and communicate</li>
+              </ul>
+              <div class="project-metrics">
+                <span>Web UI</span>
+                <span>CSV Scoring</span>
+                <span>ML Risk Stages</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Prajwal-pc/phishscopeAi" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card tilt-card">
-            <p class="project-tag">SOC Dashboard</p>
-            <h3>Inside Threat Detection System</h3>
-            <p>
-              An internal threat monitoring concept that combines system scanning, integrity checks,
-              SIEM-style event data, and report generation into a security-focused dashboard.
-            </p>
-            <ul class="project-points">
-              <li>Uses Flask, process monitoring, system scan modules, and report exports</li>
-              <li>Includes event history, JSON-driven activity tracking, and alert-oriented outputs</li>
-              <li>Reflects your resume focus on real-time analysis and security visualization</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Prajwal-pc/Inside-Threat-Detection-System" target="_blank" rel="noreferrer">GitHub Repo</a>
+          <article class="project-card featured tilt-card">
+            <div class="project-visual">
+              <img src="./assets/project-inside-threat.svg" alt="Inside Threat Detection System dashboard mockup">
+            </div>
+            <div class="project-content">
+              <p class="project-tag">SOC Dashboard</p>
+              <h3>Inside Threat Detection System</h3>
+              <p>
+                An internal threat monitoring concept that combines system scanning, integrity checks,
+                SIEM-style event data, and report generation into a security-focused dashboard.
+              </p>
+              <ul class="project-points">
+                <li>Uses Flask, monitoring modules, report export flows, and risk-focused presentation</li>
+                <li>Built around system behavior visibility, event tracking, and analyst-style outputs</li>
+                <li>Reflects your resume direction toward real-time defensive monitoring</li>
+              </ul>
+              <div class="project-metrics">
+                <span>System Scan</span>
+                <span>Risk Reports</span>
+                <span>Threat Visibility</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Prajwal-pc/Inside-Threat-Detection-System" target="_blank" rel="noreferrer">GitHub Repo</a>
+              </div>
             </div>
           </article>
 
-          <article class="project-card tilt-card">
+          <article class="project-card compact-project tilt-card">
             <p class="project-tag">AI Interface</p>
             <h3>InnerOS</h3>
             <p>
@@ -170,13 +243,12 @@
               visualization, and supportive AI-guided interactions.
             </p>
             <ul class="project-points">
-              <li>Integrated TensorFlow.js for real-time mood prediction and feedback</li>
-              <li>Focused on therapy suggestions, affirmations, and conversational support</li>
-              <li>Shows your ability to build polished human-facing experiences beyond security</li>
+              <li>Integrated TensorFlow.js for mood prediction</li>
+              <li>Included affirmations and conversational support</li>
             </ul>
           </article>
 
-          <article class="project-card tilt-card">
+          <article class="project-card compact-project tilt-card">
             <p class="project-tag">Full Stack System</p>
             <h3>Car Showroom Management System</h3>
             <p>
@@ -184,15 +256,14 @@
               workflow improvements through structured data handling.
             </p>
             <ul class="project-points">
-              <li>Enabled secure login, search, and operational record management</li>
-              <li>Improved database-backed organization for showroom workflows</li>
-              <li>Demonstrates practical business software engineering fundamentals</li>
+              <li>Secure login, search, and invoice-oriented operations</li>
+              <li>Improved organization with database-backed records</li>
             </ul>
           </article>
         </div>
       </section>
 
-      <section class="section split-section reveal" id="skills">
+      <section class="section split-section reveal" id="skills" data-section>
         <div class="section-heading compact">
           <p class="eyebrow">Skill Matrix</p>
           <h2>Security-first strengths with a builder's eye for detail.</h2>
@@ -231,15 +302,15 @@
                 <p>scikit-learn, NumPy, Chart.js</p>
               </div>
               <div>
-                <span class="tool-label">Focus</span>
-                <p>VPN security concepts, IDS concepts, attack visualization, analytics dashboards</p>
+                <span class="tool-label">Concepts</span>
+                <p>IDS concepts, VPN security concepts, attack visualization, analytics dashboards</p>
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section reveal" id="journey">
+      <section class="section reveal" id="journey" data-section>
         <div class="section-heading">
           <p class="eyebrow">Education Journey</p>
           <h2>Academic growth shaped by computing, security curiosity, and hands-on project work.</h2>
@@ -281,7 +352,40 @@
         </div>
       </section>
 
-      <section class="section reveal">
+      <section class="section reveal" id="learning" data-section>
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Currently Learning</p>
+            <h2>Growing deeper in monitoring, detection, and security operations.</h2>
+          </div>
+          <p class="section-side-copy">
+            I want this portfolio to show momentum as much as past work, so this section highlights
+            where I’m actively sharpening my direction.
+          </p>
+        </div>
+
+        <div class="learning-grid">
+          <article class="panel-card tilt-card">
+            <span class="signal-label">Current Focus</span>
+            <h3>What I’m actively improving</h3>
+            <ul class="learning-list">
+              <li>Security monitoring workflows and alert reasoning</li>
+              <li>Threat analytics dashboards and better event storytelling</li>
+              <li>Cleaner engineering practices for deployment-ready projects</li>
+            </ul>
+          </article>
+          <article class="panel-card tilt-card">
+            <span class="signal-label">Career Goal</span>
+            <h3>Where I want to contribute next</h3>
+            <p>
+              Entry-level cyber security, SOC analyst, security engineering, or software roles where
+              I can contribute to monitoring, detection, visualization, and practical product building.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" data-section>
         <div class="section-heading compact">
           <p class="eyebrow">Why Me</p>
           <h2>I like systems that sense risk early and present it clearly.</h2>
@@ -296,16 +400,21 @@
         </div>
       </section>
 
-      <section class="section reveal" id="contact">
+      <section class="section reveal" id="contact" data-section>
         <div class="contact-card tilt-card">
           <div>
             <p class="eyebrow">Contact</p>
             <h2>Let's build something sharp, secure, and memorable.</h2>
+            <p class="contact-copy">
+              If you're looking for someone who enjoys cyber security, thoughtful interfaces,
+              and practical project execution, I'd love to connect.
+            </p>
           </div>
           <div class="contact-links">
             <a href="mailto:Prajwalpanthu@gmail.com">Prajwalpanthu@gmail.com</a>
             <a href="tel:+919353756447">+91 9353756447</a>
             <a href="https://github.com/Prajwal-pc" target="_blank" rel="noreferrer">github.com/Prajwal-pc</a>
+            <a href="./assets/Prajwal-PC-Cyber-Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
           </div>
         </div>
       </section>
