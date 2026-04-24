@@ -1,52 +1,47 @@
 PRAJWAL P C
-Entry-Level Cyber Security Analyst | SOC Analyst | Security-Focused Software Developer
-Somwarpet, Karnataka, India | +91 9353756447 | Prajwalpanthu@gmail.com | GitHub: https://github.com/Prajwal-pc | Portfolio: https://prajwal-pc.github.io/portfolio/
+SOC Analyst | Cloud SOC Analyst | Cyber Security Analyst | Blue Team
+Somwarpet, Karnataka, India | +91 9353756447 | Prajwalpanthu@gmail.com | LinkedIn: https://www.linkedin.com/in/prajwalpchandrashekar | GitHub: https://github.com/Prajwal-pc | Portfolio: https://prajwal-pc.github.io/portfolio/
 
 PROFESSIONAL SUMMARY
-MCA student with a strong interest in cyber security, intrusion detection, threat analytics, anomaly detection, and security dashboard development. Hands-on experience building phishing detection and cognitive intrusion detection projects using Python, Flask, scikit-learn, React, JavaScript, and data-driven monitoring workflows. Seeking an entry-level Cyber Security, SOC Analyst, or Security Engineering role where I can contribute to alerting, monitoring, threat analysis, and secure product development.
+MCA student with hands-on experience building security-focused projects in intrusion detection, phishing analysis, live alert dashboards, and risk scoring workflows. Strong foundation in network security, log analysis, anomaly detection, incident monitoring, and Blue Team concepts, supported by a current Ethical Hacking and Penetration Testing internship. Building familiarity with cloud security fundamentals, IAM basics, cloud log monitoring concepts, and SIEM-driven analyst workflows. Seeking an entry-level SOC Analyst, Cloud SOC Analyst, or Cyber Security Analyst role in which I can contribute to alert triage, security monitoring, and incident response operations.
 
-CORE SKILLS
-Cyber Security: Intrusion Detection, Threat Analytics, Anomaly Detection, Incident Monitoring, Log Pattern Analysis, Network Security, Traffic Analysis, Secure System Design, Alert Reasoning, Risk Scoring
-Programming: Python, JavaScript, HTML, CSS
-Frameworks and Libraries: Flask, React, Tailwind CSS, scikit-learn, NumPy, Chart.js, TensorFlow.js, Socket.IO
-Platforms and Concepts: Web Applications, CSV-Based Scoring Workflows, Dashboard Development, Real-Time Alerts, JWT Authentication, API Design, SIEM-Style Monitoring, Data Visualization, Ethical Hacking, Penetration Testing
+SKILLS & TECHNOLOGIES
+Security Operations: Incident Monitoring, Alert Triage, Log Analysis, Threat Analysis, Phishing Analysis, Intrusion Detection, Anomaly Detection, IOC Review, Incident Documentation
+Blue Team & Security Fundamentals: Network Security, Traffic Analysis, Defensive Security Mindset, Vulnerability Assessment Fundamentals, Penetration Testing Fundamentals, Secure System Design, Attack Pattern Visualization
+Cloud & SIEM Readiness: Cloud Security Fundamentals, IAM Basics, Cloud Log Monitoring Concepts, SIEM Fundamentals, SOC Workflows, Security Dashboards, WebSocket Alerts, Risk Scoring Workflows
+Technical Stack: Python, Flask, React, JavaScript, HTML, CSS, Tailwind CSS, scikit-learn, TensorFlow.js, NumPy, Chart.js, REST APIs, Data Visualization, GitHub
 
 INTERNSHIP
-Ethical Hacking and Penetration Testing Intern | Current
-Rooman Technologies
-- Currently pursuing internship training in ethical hacking and penetration testing with focus on practical cyber security concepts and defensive awareness.
-- Building knowledge in vulnerability assessment, security testing approaches, and real-world attack and defense fundamentals.
+Ethical Hacking and Penetration Testing Intern | 2025 - Present
+Rooman Technologies, Bengaluru
+- Developing practical understanding of vulnerability assessment, system behavior analysis, and defensive security operations.
+- Strengthening knowledge of security risks, threat modeling, and trust-oriented system design relevant to SOC environments.
+- Gaining exposure to penetration testing methodologies, security audits, and analyst-style investigation workflows.
 
-ACADEMIC PROJECTS
+PROJECTS
 
 Cognitive Intrusion Detection System (C-IDS) | 2026
 Technologies: Python, Flask, React, Tailwind CSS, scikit-learn, WebSocket, Chart.js
-- Built a production-style reference implementation for detecting human-layer cyber attacks in real time using explainable multimodal risk scoring.
-- Implemented text analysis for manipulation indicators such as urgency, fear, authority abuse, reward bait, and secrecy.
-- Used Isolation Forest-based behavioral anomaly detection and voice-risk indicators to combine multiple threat signals into a single risk score.
-- Developed a React and Tailwind dashboard with live alerts, telemetry visualization, charts, and simulation tooling for analyst-style monitoring.
-- Added security-focused controls including JWT authentication, rate limiting, input sanitization, audit-oriented logging, and deployment guidance.
+- Built a multimodal intrusion detection project combining text, behavior, and voice-risk signals into a single interpretable threat score aligned with SOC triage workflows.
+- Designed live alert dashboards with reason indicators and simulation tooling to improve alert visibility and support faster analyst decisions.
+- Implemented authentication, rate limiting, and audit logging to improve trust, traceability, and deployment readiness.
+- Focused on explainability and actionability so security signals were easier to interpret during monitoring and investigation.
+
+Sentinel AI - Intelligent Intrusion Detection System | 2026
+Technologies: Python, AI/ML, Chart.js, VPN Security
+- Developed a VPN security project with real-time network anomaly detection to classify suspicious packet behavior.
+- Visualized attack patterns through a live dashboard with alerts and threat analytics to support continuous monitoring.
+- Simulated IDS concepts including packet analysis, anomaly scoring, and alert escalation logic in a working environment.
 
 PhishScope AI | 2026
 Technologies: Python, Flask, scikit-learn, HTML, CSS, JavaScript
-- Developed a phishing prediction platform with a custom web interface, batch CSV scoring workflow, and three-stage risk classification for low, medium, and high threat levels.
-- Designed a feature-engineering and prediction pipeline using synthetic training data, content signals, authentication indicators, sender behavior, and campaign-related attributes.
-- Built browser-based tools for manual scoring, CSV uploads, downloadable templates, prediction exports, and reason highlights to improve inspection and reporting.
-- Created a practical prototype for demonstration, experimentation, UI integration, and phishing-analysis workflow development.
-
-InnerOS | Academic Project
-Technologies: JavaScript, TensorFlow.js
-- Built an emotional companion application centered on text-based mood detection, real-time visualization, and AI-guided support interactions.
-- Integrated TensorFlow.js for mood prediction and designed a user-facing experience with affirmations and conversational support.
-
-Car Showroom Management System | Academic Project
-Technologies: Full-Stack Application Development
-- Created a management platform for inventory, customers, invoices, and sales records using structured data workflows.
-- Implemented secure login, search, and invoice-oriented operations to improve organization and day-to-day record handling.
+- Built a phishing analysis workflow supporting single-message review and batch CSV scoring for repeated analyst use.
+- Created three-stage risk outputs with reason highlights to improve trust in predictions and speed up phishing triage.
+- Added upload, export, and reporting flows to make investigation and documentation more practical for SOC-style work.
 
 EDUCATION
 Master of Computer Applications (MCA) | 2025 - 2026
-RV Institute of Technology and Management, Bengaluru | VTU | 71%
+RV Institute of Technology and Management, Bengaluru | VTU | 76%
 
 Bachelor of Computer Applications (BCA) | 2021 - 2024
 MGM Degree College, Kushal Nagar | Mangalore University | 72%
@@ -58,6 +53,6 @@ Class 10 (CBSE) | 2019
 The Indian School, Isa Town, Bahrain | 70%
 
 ADDITIONAL INFORMATION
-- Portfolio focus areas include threat analytics, SOC visuals, detection workflows, and readable security-first interfaces.
-- Actively improving security monitoring workflows, alert reasoning, threat storytelling, and deployment-ready engineering practices.
-- Open to entry-level opportunities in Cyber Security, SOC, Security Engineering, and security-focused software development.
+- Open to SOC Analyst, Cloud SOC Analyst, Cyber Security Analyst, trainee, internship, and shift-based security operations roles.
+- Available for 24x7 SOC environments and strongly interested in Blue Team operations, threat monitoring, and incident response.
+- Actively strengthening SOC readiness through hands-on projects, security learning, and practical defensive security exposure.
