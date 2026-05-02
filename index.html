@@ -553,6 +553,13 @@
       border-color: var(--border-strong);
     }
 
+    .mini-button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
     .hero-panel {
       display: grid;
       gap: 1rem;
@@ -722,6 +729,64 @@
       gap: 1rem;
     }
 
+    .live-strip-section {
+      padding-top: 0;
+      padding-bottom: 2rem;
+    }
+
+    .live-strip {
+      padding: 1.15rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .live-strip-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .live-strip-head strong {
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+    }
+
+    .live-track {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(220px, 1fr));
+      gap: 0.8rem;
+      overflow-x: auto;
+      padding-bottom: 0.15rem;
+      scrollbar-width: thin;
+    }
+
+    .live-item {
+      min-width: 0;
+      padding: 1rem;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .live-item span {
+      color: var(--success);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .live-item p {
+      margin: 0;
+      color: var(--muted-strong);
+      font-size: 0.94rem;
+      line-height: 1.5;
+    }
+
     .about-card {
       padding: 1.5rem;
     }
@@ -790,6 +855,46 @@
       gap: 0.6rem;
     }
 
+    .research-toolbar {
+      display: grid;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .filter-tab {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.7rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--muted-strong);
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .filter-tab:hover {
+      transform: translateY(-1px);
+      border-color: var(--border-strong);
+      color: var(--primary);
+    }
+
+    .filter-tab.is-active {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.16);
+    }
+
     .accordion-list,
     .startup-grid,
     .project-grid,
@@ -804,6 +909,10 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .startup-grid.is-transitioning {
+      opacity: 0.7;
+    }
+
     .project-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -813,7 +922,7 @@
     }
 
     .resume-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .contact-grid {
@@ -1032,6 +1141,8 @@
     .startup-card {
       height: fit-content;
       border-top: 4px solid var(--brand);
+      animation: cardRiseFade 0.42s ease both;
+      animation-delay: var(--delay, 0ms);
     }
 
     .startup-head {
@@ -1355,6 +1466,17 @@
       }
     }
 
+    @keyframes cardRiseFade {
+      0% {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 1080px) {
       .site-nav {
         gap: 0.12rem;
@@ -1383,6 +1505,10 @@
       .study-detail-grid,
       .startup-panel-grid {
         grid-template-columns: 1fr 1fr;
+      }
+
+      .live-track {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
       }
     }
 
@@ -1426,6 +1552,7 @@
       .hero-panel-grid,
       .value-grid,
       .skills-grid,
+      .resume-grid,
       .study-flow,
       .study-detail-grid,
       .startup-panel-grid {
@@ -1475,6 +1602,10 @@
         align-items: stretch;
       }
 
+      .mini-button-row {
+        width: 100%;
+      }
+
       .metric-grid {
         grid-template-columns: 1fr;
       }
@@ -1503,6 +1634,10 @@
       .project-top,
       .skill-top {
         flex-direction: column;
+      }
+
+      .live-track {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1610,6 +1745,10 @@
                   <i data-lucide="copy"></i>
                   Copy email
                 </button>
+                <button class="mini-button" type="button" data-copy-portfolio>
+                  <i data-lucide="link-2"></i>
+                  Copy portfolio link
+                </button>
               </div>
 
               <div class="identity-row">
@@ -1624,6 +1763,10 @@
               </div>
 
               <div class="quick-links">
+                <a class="quick-link" href="https://prajwal-pc.github.io/portfolio/" target="_blank" rel="noreferrer">
+                  <i data-lucide="link-2"></i>
+                  prajwal-pc.github.io/portfolio
+                </a>
                 <a class="quick-link" href="https://linkedin.com/in/prajwalpchandrashekar" target="_blank" rel="noreferrer">
                   <i data-lucide="linkedin"></i>
                   LinkedIn
@@ -1741,6 +1884,38 @@
         </div>
       </section>
 
+      <section class="section live-strip-section" aria-label="Currently Building">
+        <div class="container">
+          <article class="card live-strip reveal">
+            <div class="live-strip-head">
+              <span class="status-pill success">
+                <span class="status-dot"></span>
+                Live signal
+              </span>
+              <strong>Currently Building</strong>
+            </div>
+            <div class="live-track">
+              <article class="live-item">
+                <span>Currently reading</span>
+                <p>Continuous Discovery Habits by Teresa Torres.</p>
+              </article>
+              <article class="live-item">
+                <span>Currently researching</span>
+                <p>Swiggy Instamart's reorder flow and where retention drops after the first purchase.</p>
+              </article>
+              <article class="live-item">
+                <span>Currently building</span>
+                <p>A structured PRD-style teardown of Zepto's dark store inventory model.</p>
+              </article>
+              <article class="live-item">
+                <span>Active goal</span>
+                <p>Land an APM or Product Analyst role in Bengaluru by Q3 2026.</p>
+              </article>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="section" id="about" data-section>
         <div class="container">
           <div class="section-head reveal">
@@ -1829,6 +2004,17 @@
               <span class="chip">B2B trade</span>
             </div>
           </article>
+
+          <div class="research-toolbar reveal">
+            <div class="filter-tabs" id="startupFilters" role="tablist" aria-label="Startup research filters">
+              <button class="filter-tab is-active" type="button" data-startup-filter="All" aria-pressed="true">All</button>
+              <button class="filter-tab" type="button" data-startup-filter="Consumer" aria-pressed="false">Consumer</button>
+              <button class="filter-tab" type="button" data-startup-filter="Fintech" aria-pressed="false">Fintech</button>
+              <button class="filter-tab" type="button" data-startup-filter="SaaS" aria-pressed="false">SaaS</button>
+              <button class="filter-tab" type="button" data-startup-filter="Mobility" aria-pressed="false">Mobility</button>
+              <button class="filter-tab" type="button" data-startup-filter="B2B Trade" aria-pressed="false">B2B Trade</button>
+            </div>
+          </div>
 
           <div class="startup-grid reveal" id="startupResearch"></div>
         </div>
@@ -1963,9 +2149,9 @@
         <div class="container">
           <div class="section-head reveal">
             <span class="eyebrow">Resume Download</span>
-            <h2>A recruiter-ready APM resume wired to the actual PDF download.</h2>
+            <h2>My current resumes, ready to download.</h2>
             <p>
-              This section now points to the real uploaded APM resume as a downloadable PDF, so what recruiters download matches the portfolio you are showing them.
+              These are the same resume versions I'm using in applications, so the downloads match the portfolio and the roles I'm targeting.
             </p>
           </div>
 
@@ -1978,7 +2164,7 @@
               </span>
             </div>
             <p>
-              Built for APM, Product Analyst, and early PM conversations. The button below downloads the real PDF generated from your latest resume document instead of the earlier placeholder snapshot.
+              This version is meant for APM, Product Analyst, and product internship roles. It keeps the focus on my case studies, product thinking, and technical background.
             </p>
           </article>
 
@@ -1986,16 +2172,33 @@
             <article class="card resume-card reveal">
               <div class="resume-label">APM Resume</div>
               <strong>Prajwal_PC_APM_Resume.pdf</strong>
-              <p>Highlights product case studies, PM frameworks, startup research, and technical depth that supports product execution.</p>
+              <p>A clean one-page view of my product case studies, startup research, and technical foundation.</p>
               <ul>
-                <li>Strongest fit for APM, Product Analyst, and PM internship conversations.</li>
-                <li>Centers on user stories, prioritization, and metric-led thinking.</li>
-                <li>Downloads the real PDF version generated from your uploaded resume document.</li>
+                <li>Best suited for APM, Product Analyst, and product internship roles.</li>
+                <li>Shows how I approach user problems, prioritization, and success metrics.</li>
+                <li>Downloads as the latest PDF version of my resume.</li>
               </ul>
               <div class="resume-actions">
                 <a class="button primary" href="./Prajwal_PC_APM_Resume.pdf" download="Prajwal_PC_APM_Resume.pdf">
                   <i data-lucide="download"></i>
                   Download APM Resume
+                </a>
+              </div>
+            </article>
+
+            <article class="card resume-card reveal">
+              <div class="resume-label">BA Resume</div>
+              <strong>Prajwal_PC_BA_Resume.pdf</strong>
+              <p>Built for Business Analyst and Junior BA roles. Centers on requirements gathering, process mapping, gap analysis, BRD documentation, and stakeholder communication.</p>
+              <ul>
+                <li>Strongest fit for BA, Junior BA, and Business Analyst conversations.</li>
+                <li>Leans more into structured thinking, analysis, and documentation work.</li>
+                <li>Downloads as a separate PDF tailored for BA applications.</li>
+              </ul>
+              <div class="resume-actions">
+                <a class="button secondary" href="./Prajwal_PC_BA_Resume.pdf" download="Prajwal_PC_BA_Resume.pdf">
+                  <i data-lucide="download"></i>
+                  Download BA Resume
                 </a>
               </div>
             </article>
@@ -2007,7 +2210,7 @@
         <div class="container">
           <div class="section-head reveal">
             <span class="eyebrow">Contact</span>
-            <h2>Let’s talk about product roles, problem spaces, and teams building something meaningful.</h2>
+            <h2>Let's talk about product roles, problem spaces, and teams building something meaningful.</h2>
             <p>
               I am actively looking for APM and Product Analyst roles in Bengaluru. If your team values thoughtful problem framing, crisp communication, and a builder-friendly PM mindset, I would love to connect.
             </p>
@@ -2019,14 +2222,21 @@
               <ul class="contact-list">
                 <li><a href="mailto:Prajwalpanthu@gmail.com">Prajwalpanthu@gmail.com</a></li>
                 <li><a href="tel:+919353756447">+91 9353756447</a></li>
+                <li><a href="https://prajwal-pc.github.io/portfolio/" target="_blank" rel="noreferrer">prajwal-pc.github.io/portfolio</a></li>
                 <li><a href="https://linkedin.com/in/prajwalpchandrashekar" target="_blank" rel="noreferrer">linkedin.com/in/prajwalpchandrashekar</a></li>
                 <li><a href="https://github.com/Prajwal-pc" target="_blank" rel="noreferrer">github.com/Prajwal-pc</a></li>
               </ul>
 
-              <button class="mini-button" type="button" data-copy-email>
-                <i data-lucide="copy"></i>
-                Copy email address
-              </button>
+              <div class="mini-button-row">
+                <button class="mini-button" type="button" data-copy-email>
+                  <i data-lucide="copy"></i>
+                  Copy email address
+                </button>
+                <button class="mini-button" type="button" data-copy-portfolio>
+                  <i data-lucide="link-2"></i>
+                  Copy portfolio link
+                </button>
+              </div>
 
               <div class="contact-note">
                 <i data-lucide="badge-check"></i>
@@ -2081,33 +2291,31 @@
         title: "Food Delivery App: Cancellation Rate Problem",
         readTime: "5 min read",
         summary: "A post-payment confidence problem disguised as an operations issue.",
-        problem: "30% of users cancelled within 2 minutes of placing an order.",
-        rootCause: "Manual restaurant acceptance created a silent void after payment. Users paid, saw no immediate proof of progress, assumed something broke, and cancelled proactively.",
-        solution: "Auto-confirm the order instantly, then transition into a real-time status animation that explains what is happening while restaurant acceptance catches up behind the scenes.",
-        metric: "Reduce 2-minute cancellation rate from 30% to under 12% within 60 days.",
-        userStory: "As a customer who just paid, I want instant order confirmation so I don't assume my order failed.",
-        frameworks: ["5 Whys", "North Star Metric"],
-        notes: [
-          "Instrument time-to-first-status-change as a leading indicator, not just overall cancellations.",
-          "Break the problem by restaurant response time, payment method, and time-of-day to separate perception from operations.",
-          "Run an A/B test on instant confirmation plus status animation before touching deeper acceptance workflows."
+        problem: "30% of users cancel within 2 minutes of placing an order.",
+        rootCause: "Manual restaurant acceptance -> silent post-payment void -> user assumes order failed -> cancels.",
+        solution: "Auto-confirm orders with real-time status animation. No change to restaurant workflow.",
+        metric: "Reduce 2-minute cancellation rate from 30% -> under 12% within 60 days of launch.",
+        userStory: "As a customer who just paid, I want instant order confirmation so I don't assume my order failed and cancel unnecessarily.",
+        acceptanceCriteria: [
+          "Given an order is placed and payment is successful, when confirmation fires, then an animated status indicator appears within 3 seconds showing \"Order Confirmed\"."
         ],
+        frameworks: ["5 Whys", "North Star Metric", "Acceptance Criteria"],
         flow: [
           {
             label: "Problem",
-            detail: "Users cancel almost immediately after checkout because the interface goes silent right after payment."
+            detail: "30% of users cancel within 2 minutes because the product goes quiet at the exact moment reassurance matters."
           },
           {
             label: "Root Cause",
-            detail: "The app waits on manual restaurant acceptance before signaling progress, leaving the user in an ambiguous state."
+            detail: "Manual acceptance creates a silent post-payment void, so users infer failure before the order has a chance to progress."
           },
           {
             label: "Solution",
-            detail: "Confirm instantly, animate state progression, and explain that the restaurant is preparing to accept the order."
+            detail: "Auto-confirm immediately and show a real-time status animation without changing the restaurant-side workflow."
           },
           {
             label: "Metric",
-            detail: "The target is confidence recovery: fewer fast cancellations without needing a restaurant-side workflow change first."
+            detail: "Success means reducing fast cancellations from 30% to under 12% within 60 days."
           }
         ]
       },
@@ -2117,33 +2325,27 @@
         title: "E-Commerce: Cart Abandonment at Checkout",
         readTime: "4 min read",
         summary: "A pricing transparency issue compounded by the wrong team incentive.",
-        problem: "50% cart abandonment at checkout.",
-        rootCause: "Tax and shipping appeared only at the final step, so users experienced price shock late in the flow. Internally, teams were measured on add-to-cart rather than purchase completion, so nobody owned the leak that mattered most.",
-        solution: "Show estimated total cost directly on the product page and realign the team's KPI around purchase completion rate instead of upstream vanity metrics.",
-        metric: "Reduce checkout drop-off from 50% to 30% within 90 days and track weekly cohort conversion.",
-        userStory: "As a shopper comparing options, I want to know the true expected total early so I can decide without feeling misled at checkout.",
-        frameworks: ["Metric Trees", "Incentive Alignment"],
-        notes: [
-          "Treat purchase completion as the parent metric and assign it explicit team ownership.",
-          "Validate whether transparency changes conversion differently for low-AOV and high-AOV cohorts.",
-          "Monitor whether earlier price disclosure changes add-to-cart behavior but improves completed order quality."
-        ],
+        problem: "50% cart abandonment at the final checkout step.",
+        rootCause: "Hidden charges (tax + shipping) only appear at the last step. Teams are measured on add-to-cart rate, not purchase completion - a broken incentive creating a broken experience.",
+        solution: "Display estimated total (including tax and shipping) on the product page itself. Realign team success metric from add-to-cart to purchase completion rate.",
+        metric: "Reduce checkout drop-off from 50% -> 30% within 90 days. Track weekly cohort conversion.",
+        frameworks: ["Metric Trees", "Incentive Alignment", "Funnel Analysis"],
         flow: [
           {
             label: "Problem",
-            detail: "Users abandon at the moment total cost becomes real, which means demand exists but trust breaks late."
+            detail: "Users reach the final step with intent, then abandon when the true price appears too late in the journey."
           },
           {
             label: "Root Cause",
-            detail: "Pricing truth arrives too late and the team structure optimizes the wrong stage of the funnel."
+            detail: "Tax and shipping show up at the end, while internal teams optimize add-to-cart instead of completed purchase."
           },
           {
             label: "Solution",
-            detail: "Surface estimated total cost up front, then align performance reviews and dashboards to purchase completion."
+            detail: "Show estimated total on the product page and shift team dashboards toward purchase completion."
           },
           {
             label: "Metric",
-            detail: "Win by shrinking the gap between intent and conversion, measured through cohort-level checkout completion."
+            detail: "The win condition is lower final-step drop-off and stronger weekly cohort conversion."
           }
         ]
       },
@@ -2153,39 +2355,32 @@
         title: "Grocery App: Repeat Order Friction",
         readTime: "6 min read",
         summary: "The product optimized discovery while repeat customers needed memory and speed.",
-        problem: "Frequent shoppers manually rebuilt nearly identical weekly carts and churned to competitors with faster repeat-order flows.",
-        rootCause: "The app was designed for browsing and discovery, not for loyalty behavior. It did not recognize that for many households, weekly grocery purchase is a repeated job rather than a fresh search task.",
-        solution: "Add a one-tap Reorder module on the home screen that pre-adds all in-stock items from the previous order and transparently flags unavailable ones before checkout.",
+        problem: "Frequent shoppers manually re-add identical items every week, driving churn to competitors who offer one-tap reorder.",
+        rootCause: "App optimised for discovery (new users), not loyalty (repeat users). No repeat-order affordance exists.",
+        solution: "Add a one-tap Reorder button on the home screen with all in-stock items pre-added to cart.",
         metric: "Increase weekly active repeat purchasers by 25% within 45 days.",
         userStory: "As a repeat customer, I want to reorder my last cart in one tap so that I save time on identical weekly purchases.",
-        frameworks: ["JTBD", "Acceptance Criteria", "Retention Metrics"],
+        outOfScope: "Partial reorders and substitutions - deferred to reduce delivery complexity.",
         acceptanceCriteria: [
-          "Given a previous order exists, when the user lands on the home screen, then a Reorder module appears above the discovery feed.",
-          "When the user taps Reorder, all in-stock items from the previous order are pre-added to the cart automatically.",
-          "If some items are unavailable, then the cart clearly marks those items and suggests substitutes before checkout.",
-          "A successful reorder event is counted only when the prefilled cart converts into a completed purchase, not when the button is tapped."
+          "Given a previous order exists, when the user opens the app, then a \"Reorder\" button appears on the home screen with all in-stock items pre-added to cart."
         ],
-        notes: [
-          "Track reorder exposure rate, click-through rate, prefilled cart conversion, and substitute acceptance.",
-          "Measure whether repeat-order speed improves 7-day and 30-day retention for heavy grocery cohorts.",
-          "Preserve discovery below the fold so loyalty users get speed without harming new-user browsing."
-        ],
+        frameworks: ["JTBD", "Acceptance Criteria", "Retention Metrics", "Cohort Analysis"],
         flow: [
           {
             label: "Problem",
-            detail: "Loyal shoppers repeat the same work every week and feel the app does not remember them."
+            detail: "Repeat customers spend time rebuilding the same basket every week instead of completing a fast loyalty flow."
           },
           {
             label: "Root Cause",
-            detail: "The experience was built for assortment discovery instead of recurring household behavior."
+            detail: "The app is built for discovery, not repeat behavior, so it never acknowledges the user's recurring job."
           },
           {
             label: "Solution",
-            detail: "Offer one-tap reorder from the home screen and prefill the cart with in-stock items."
+            detail: "Introduce a visible Reorder button on the home screen that pre-adds all in-stock items from the previous order."
           },
           {
             label: "Metric",
-            detail: "Success is repeat-purchase behavior: more weekly active repeat buyers, not just more button taps."
+            detail: "Success is stronger repeat behavior: a 25% lift in weekly active repeat purchasers within 45 days."
           }
         ]
       }
@@ -2199,6 +2394,7 @@
         industry: "Quick Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
+        filters: ["Consumer"],
         summary: "The real product is promise reliability, not raw speed branding.",
         scale: "A leading quick-commerce player in India built on dense dark-store operations, frequent grocery behavior, and a promise that depends on hyperlocal inventory accuracy more than marketing speed claims.",
         product: "Near-instant grocery delivery powered by a dense dark-store network and city-level logistics orchestration.",
@@ -2217,6 +2413,7 @@
         industry: "Fintech",
         stage: "Scale-up",
         hq: "Bengaluru",
+        filters: ["Fintech"],
         summary: "Developer love does not automatically translate into business activation.",
         scale: "A full-stack payments infrastructure platform with merchant payments, payouts, and finance operations products such as RazorpayX serving businesses across categories.",
         product: "API-first payments and money movement infrastructure for online businesses, plus operating workflows for banking, payouts, and payroll.",
@@ -2235,6 +2432,7 @@
         industry: "Payments + Fintech",
         stage: "Late-stage",
         hq: "Bengaluru",
+        filters: ["Fintech"],
         summary: "UPI trust is strong, but trust has not yet laddered into financial-product adoption.",
         scale: "A population-scale payments platform with 700 million registered users and more than 50 million merchants as of late April 2026, expanding beyond UPI into insurance, lending, investments, and commerce.",
         product: "A payments-led super app that starts with habitual money movement and then layers adjacent financial products.",
@@ -2253,6 +2451,7 @@
         industry: "Value Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
+        filters: ["Consumer"],
         summary: "The reseller problem is confidence, not catalog size.",
         scale: "A multi-sided commerce platform designed to make internet shopping affordable for a billion Indians, with lakhs of sellers and a national logistics footprint built around value-conscious demand.",
         product: "Low-cost e-commerce and social-commerce behavior built around affordable discovery, reseller distribution, and pan-India seller enablement.",
@@ -2271,6 +2470,7 @@
         industry: "Consumer Fintech",
         stage: "Growth",
         hq: "Bengaluru",
+        filters: ["Fintech"],
         summary: "Approval speed matters less if approved users still hesitate to disburse.",
         scale: "A full-stack digital finance app spanning UPI, loans, insurance, and mutual funds, positioned around simplicity, accessibility, and fully digital customer journeys.",
         product: "Simple consumer finance flows that bring lending, payments, and protection into one app.",
@@ -2289,6 +2489,7 @@
         industry: "HR Tech / SaaS",
         stage: "Enterprise scale-up",
         hq: "Bengaluru",
+        filters: ["SaaS"],
         summary: "HR buys the product; employee habit determines whether it actually wins.",
         scale: "An AI-powered global HCM platform positioned as a consumer-grade employee experience for enterprise HR processes.",
         product: "Cloud HCM software covering HR operations, employee self-service, manager workflows, and people systems at enterprise scale.",
@@ -2307,6 +2508,7 @@
         industry: "Developer Tools / SaaS",
         stage: "Global SaaS",
         hq: "Bengaluru",
+        filters: ["SaaS"],
         summary: "A developer tool wins when the first session proves value fast.",
         scale: "A testing platform used by more than 50,000 customers across 135+ countries, with 6 million developer signups, 1 billion tests per year, and 3,500+ real devices and browsers.",
         product: "Cloud-based manual, automated, visual, accessibility, and device testing for web and mobile teams.",
@@ -2325,6 +2527,7 @@
         industry: "EV + Connected Mobility",
         stage: "Growth",
         hq: "Bengaluru",
+        filters: ["Mobility"],
         summary: "Retention lives in the software layer after the ride is over.",
         scale: "A leading Indian electric two-wheeler brand combining vehicle hardware, charging infrastructure, and a connected software layer around ride data and service experience.",
         product: "Electric scooters supported by a companion app, ride telemetry, diagnostics, charging intelligence, and software-led ownership loops.",
@@ -2343,6 +2546,7 @@
         industry: "Food Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
+        filters: ["Consumer"],
         summary: "Freshness has to feel believable before the first order happens.",
         scale: "India's largest D2C fresh meat and seafood brand, operating across 28 cities, 80,000+ daily orders, and a tightly controlled sourcing and cold-chain model.",
         product: "A farm-to-fork meat and seafood commerce experience built around trust, freshness, and full-stack quality control.",
@@ -2361,6 +2565,7 @@
         industry: "B2B Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
+        filters: ["B2B Trade"],
         summary: "B2B repeat behavior depends on relationship confidence, not only catalog depth.",
         scale: "India's largest eB2B platform, operating across FMCG, staples, fresh, pharma, and logistics with technology, supply chain, and working-capital support for small businesses.",
         product: "Digital trade infrastructure for retailers, suppliers, logistics coordination, and working-capital support.",
@@ -2373,6 +2578,8 @@
         frameworks: ["B2B relationship mapping", "Repeat purchase triggers", "AI-assisted personalization"]
       }
     ];
+
+    let activeStartupFilter = "All";
 
     const technicalProjects = [
       {
@@ -2412,9 +2619,11 @@
       "North Star Metric": "gauge",
       "Metric Trees": "workflow",
       "Incentive Alignment": "users",
+      "Funnel Analysis": "funnel",
       "JTBD": "briefcase",
       "Acceptance Criteria": "check-check",
       "Retention Metrics": "repeat",
+      "Cohort Analysis": "users",
       "Demand forecasting": "chart-column",
       "Hyperlocal cohort analysis": "map-pinned",
       "Activation funnel": "funnel",
@@ -2448,20 +2657,26 @@
     function renderCaseStudies() {
       const container = document.getElementById("caseStudies");
       container.innerHTML = caseStudies.map((study, index) => {
-        const extraDetail = study.acceptanceCriteria
-          ? `
-            <article class="card detail-card">
-              <h4>User Story + Acceptance Criteria</h4>
-              <p style="margin-bottom: 0.75rem;">${study.userStory}</p>
-              <ul>${study.acceptanceCriteria.map((item) => `<li>${item}</li>`).join("")}</ul>
-            </article>
-          `
-          : `
+        const extraCards = [
+          study.userStory ? `
             <article class="card detail-card">
               <h4>User Story</h4>
               <p>${study.userStory}</p>
             </article>
-          `;
+          ` : "",
+          study.acceptanceCriteria ? `
+            <article class="card detail-card">
+              <h4>Acceptance Criteria</h4>
+              <ul>${study.acceptanceCriteria.map((item) => `<li>${item}</li>`).join("")}</ul>
+            </article>
+          ` : "",
+          study.outOfScope ? `
+            <article class="card detail-card">
+              <h4>Out of Scope (Phase 1)</h4>
+              <p>${study.outOfScope}</p>
+            </article>
+          ` : ""
+        ].join("");
 
         return `
           <article class="card accordion-item ${index === 0 ? "is-open" : ""}" data-accordion-group="case-studies">
@@ -2511,12 +2726,7 @@
                     <p>${study.solution}</p>
                   </article>
 
-                  ${extraDetail}
-
-                  <article class="card detail-card">
-                    <h4>What I would instrument</h4>
-                    <ul>${study.notes.map((note) => `<li>${note}</li>`).join("")}</ul>
-                  </article>
+                  ${extraCards}
 
                   <article class="card detail-card">
                     <h4>Frameworks used</h4>
@@ -2532,9 +2742,18 @@
       }).join("");
     }
 
-    function renderStartupResearch() {
+    function renderStartupResearch(withTransition = false) {
       const container = document.getElementById("startupResearch");
-      container.innerHTML = startups.map((startup, index) => `
+      const visibleStartups = startups.filter((startup) => {
+        return activeStartupFilter === "All" || startup.filters.includes(activeStartupFilter);
+      });
+
+      if (withTransition) {
+        container.classList.add("is-transitioning");
+      }
+
+      const renderCards = () => {
+        container.innerHTML = visibleStartups.map((startup, index) => `
         <article class="card accordion-item startup-card ${index === 0 ? "is-open" : ""}" data-accordion-group="startups" style="--brand: ${startup.brand};">
           <button class="accordion-trigger" type="button" aria-expanded="${index === 0 ? "true" : "false"}">
             <div class="accordion-row">
@@ -2619,6 +2838,35 @@
           </div>
         </article>
       `).join("");
+        container.classList.remove("is-transitioning");
+        hydrateIcons();
+        syncOpenAccordions();
+      };
+
+      if (withTransition) {
+        window.setTimeout(renderCards, 120);
+      } else {
+        renderCards();
+      }
+    }
+
+    function initializeStartupFilters() {
+      document.querySelectorAll("[data-startup-filter]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextFilter = button.dataset.startupFilter;
+          if (!nextFilter || nextFilter === activeStartupFilter) {
+            return;
+          }
+
+          activeStartupFilter = nextFilter;
+          document.querySelectorAll("[data-startup-filter]").forEach((candidate) => {
+            const isActive = candidate.dataset.startupFilter === activeStartupFilter;
+            candidate.classList.toggle("is-active", isActive);
+            candidate.setAttribute("aria-pressed", String(isActive));
+          });
+          renderStartupResearch(true);
+        });
+      });
     }
 
     function renderTechnicalProjects() {
@@ -2835,25 +3083,38 @@
       }, 2200);
     }
 
-    async function copyEmail() {
-      const email = "Prajwalpanthu@gmail.com";
+    async function copyText(value, successMessage) {
       try {
-        await navigator.clipboard.writeText(email);
-        showToast("Email copied");
+        await navigator.clipboard.writeText(value);
+        showToast(successMessage);
       } catch (error) {
         const input = document.createElement("input");
-        input.value = email;
+        input.value = value;
         document.body.appendChild(input);
         input.select();
         document.execCommand("copy");
         input.remove();
-        showToast("Email copied");
+        showToast(successMessage);
       }
+    }
+
+    function copyEmail() {
+      return copyText("Prajwalpanthu@gmail.com", "Email copied");
+    }
+
+    function copyPortfolioLink() {
+      return copyText("https://prajwal-pc.github.io/portfolio/", "Copied!");
     }
 
     function bindCopyEmailButtons() {
       document.querySelectorAll("[data-copy-email]").forEach((button) => {
         button.addEventListener("click", copyEmail);
+      });
+    }
+
+    function bindCopyPortfolioButtons() {
+      document.querySelectorAll("[data-copy-portfolio]").forEach((button) => {
+        button.addEventListener("click", copyPortfolioLink);
       });
     }
 
@@ -2888,12 +3149,14 @@
       hydrateIcons();
       initializeThemeToggle();
       initializeAccordions();
+      initializeStartupFilters();
       initializeRevealObserver();
       initializeSectionSpy();
       initializeHeaderState();
       initializeMenu();
       setLastActiveLabel();
       bindCopyEmailButtons();
+      bindCopyPortfolioButtons();
       initializeContactForm();
       syncOpenAccordions();
       window.addEventListener("resize", syncOpenAccordions);
