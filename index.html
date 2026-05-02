@@ -813,7 +813,7 @@
     }
 
     .resume-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: 1fr;
     }
 
     .contact-grid {
@@ -1031,26 +1031,13 @@
 
     .startup-card {
       height: fit-content;
+      border-top: 4px solid var(--brand);
     }
 
     .startup-head {
       display: flex;
       align-items: flex-start;
-      gap: 0.95rem;
-    }
-
-    .logo-pill {
-      width: 3.1rem;
-      height: 3.1rem;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      font-weight: 800;
-      font-size: 1.05rem;
-      color: #fff;
-      background: var(--brand);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+      gap: 0.25rem;
     }
 
     .startup-card h3 {
@@ -1383,8 +1370,7 @@
       }
 
       .value-grid,
-      .skills-grid,
-      .resume-grid {
+      .skills-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -1440,7 +1426,6 @@
       .hero-panel-grid,
       .value-grid,
       .skills-grid,
-      .resume-grid,
       .study-flow,
       .study-detail-grid,
       .startup-panel-grid {
@@ -1607,10 +1592,10 @@
             </p>
 
             <div class="hero-actions">
-              <button class="button primary" type="button" data-download="apm">
+              <a class="button primary" href="./Prajwal_PC_APM_Resume.pdf" download="Prajwal_PC_APM_Resume.pdf">
                 <i data-lucide="download"></i>
                 Download Resume
-              </button>
+              </a>
               <a class="button secondary" href="#case-studies">
                 <i data-lucide="arrow-down"></i>
                 View My Work
@@ -1823,10 +1808,10 @@
         <div class="container">
           <div class="section-head reveal">
             <span class="eyebrow">Flagship Research</span>
-            <h2>Personal research works on 10 Bengaluru startups, each viewed through a PM lens.</h2>
+            <h2>Personal research works on 10 Bengaluru startups, each written like a compact PM teardown.</h2>
             <p>
-              This section is built to feel like real product thinking, not startup admiration. I focus on the constraint behind the growth story:
-              where activation leaks, where trust stalls, where retention actually gets decided, and what a PM should instrument next.
+              This section is meant to read like actual research work, not startup admiration. For each company, I focus on the operating constraint behind the growth story:
+              where activation leaks, where trust stalls, where retention gets decided, and what I would test next as a PM.
             </p>
           </div>
 
@@ -1834,7 +1819,7 @@
             <h3>The question behind every teardown: where is the real product leverage hiding?</h3>
             <p>
               Sometimes it is onboarding. Sometimes it is a broken incentive. Sometimes it is a discoverability problem disguised as weak demand.
-              The research below is my attempt to surface the product problem underneath the headline.
+              The research below is my attempt to surface the product problem underneath the headline, then outline the metric, test, and risk that deserve PM attention.
             </p>
             <div class="chip-row">
               <span class="chip">Consumer</span>
@@ -1978,10 +1963,9 @@
         <div class="container">
           <div class="section-head reveal">
             <span class="eyebrow">Resume Download</span>
-            <h2>Two resume versions, one tuned for PM tracks and one for BA conversations.</h2>
+            <h2>A recruiter-ready APM resume wired to the actual PDF download.</h2>
             <p>
-              Both downloads are packed into this single-file site so the experience stays self-contained. The APM version leans into product case studies and frameworks;
-              the BA version emphasizes structured thinking, documentation, and analytical rigor.
+              This section now points to the real uploaded APM resume as a downloadable PDF, so what recruiters download matches the portfolio you are showing them.
             </p>
           </div>
 
@@ -1994,8 +1978,7 @@
               </span>
             </div>
             <p>
-              Recruiter-friendly versions ready for quick sharing. Use the APM resume for product roles and the BA resume where process mapping,
-              requirement clarity, and business analysis depth should stand out more strongly.
+              Built for APM, Product Analyst, and early PM conversations. The button below downloads the real PDF generated from your latest resume document instead of the earlier placeholder snapshot.
             </p>
           </article>
 
@@ -2007,28 +1990,13 @@
               <ul>
                 <li>Strongest fit for APM, Product Analyst, and PM internship conversations.</li>
                 <li>Centers on user stories, prioritization, and metric-led thinking.</li>
+                <li>Downloads the real PDF version generated from your uploaded resume document.</li>
               </ul>
               <div class="resume-actions">
-                <button class="button primary" type="button" data-download="apm">
+                <a class="button primary" href="./Prajwal_PC_APM_Resume.pdf" download="Prajwal_PC_APM_Resume.pdf">
                   <i data-lucide="download"></i>
                   Download APM Resume
-                </button>
-              </div>
-            </article>
-
-            <article class="card resume-card reveal">
-              <div class="resume-label">BA Resume</div>
-              <strong>Prajwal_PC_BA_Resume.pdf</strong>
-              <p>Highlights structured problem-solving, requirement thinking, documentation discipline, and analytical problem breakdown.</p>
-              <ul>
-                <li>Useful for Business Analyst, Product Operations, and hybrid product-analyst roles.</li>
-                <li>Frames the same work through business impact and process clarity.</li>
-              </ul>
-              <div class="resume-actions">
-                <button class="button secondary" type="button" data-download="ba">
-                  <i data-lucide="download"></i>
-                  Download BA Resume
-                </button>
+                </a>
               </div>
             </article>
           </div>
@@ -2095,7 +2063,7 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <span>Designed as a single-file portfolio for recruiters, hiring managers, and product teams.</span>
+        <span>Designed as a polished PM portfolio for recruiters, hiring managers, and product teams.</span>
         <span>Last active: May 2, 2026</span>
       </div>
     </footer>
@@ -2227,23 +2195,24 @@
       {
         id: "zepto",
         name: "Zepto",
-        logo: "Z",
         brand: "#8b5cf6",
         industry: "Quick Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
         summary: "The real product is promise reliability, not raw speed branding.",
-        scale: "One of India's largest quick-commerce players, with a hyperlocal dark-store model and a high-frequency grocery use case that depends on fast picking, routing, and accurate availability.",
+        scale: "A leading quick-commerce player in India built on dense dark-store operations, frequent grocery behavior, and a promise that depends on hyperlocal inventory accuracy more than marketing speed claims.",
         product: "Near-instant grocery delivery powered by a dense dark-store network and city-level logistics orchestration.",
         insight: "Their biggest product challenge is dark-store inventory optimization. Too much stock increases wastage and working capital drag; too little breaks the delivery promise and erodes user trust. The metric that matters is not nominal delivery speed, but promise fulfillment rate.",
+        whyNow: "Quick commerce is entering a margin-sensitive phase. Once users trust the category, the real moat shifts from fast delivery perception to consistently meeting the promised slot without stockouts or substitutions.",
         opportunity: "Predictive restocking using hyperlocal demand signals such as weather, local events, apartment density, payday behavior, and time-of-day patterns.",
+        testIdea: "Pilot predictive safety-stock recommendations in a small cluster of dark stores, then compare out-of-stock rate, wastage, and promise fulfillment against control stores.",
+        watchout: "If Zepto over-optimizes for speed while underinvesting in inventory intelligence, failed promises will quietly damage repeat behavior long before users say it explicitly.",
         metric: "Orders delivered within promised time / total orders placed",
         frameworks: ["Demand forecasting", "Hyperlocal cohort analysis"]
       },
       {
         id: "razorpay",
         name: "Razorpay",
-        logo: "R",
         brand: "#2563eb",
         industry: "Fintech",
         stage: "Scale-up",
@@ -2252,62 +2221,70 @@
         scale: "A full-stack payments infrastructure platform with merchant payments, payouts, and finance operations products such as RazorpayX serving businesses across categories.",
         product: "API-first payments and money movement infrastructure for online businesses, plus operating workflows for banking, payouts, and payroll.",
         insight: "The activation gap sits between sign-up and the first live transaction. Developers can integrate the API, but business owners still hesitate on compliance, configuration, and production go-live. That means adoption is won or lost before value is proven.",
+        whyNow: "Fintech infrastructure is increasingly competitive, so the winner is not only the best API but the fastest path from intention to trusted live usage for small and mid-sized businesses.",
         opportunity: "A guided onboarding journey that narrows time-to-first-live-transaction from days to under two hours with milestone-based setup, contextual verification help, and merchant-safe launch checks.",
+        testIdea: "Build a first-48-hours onboarding tracker with clear next steps, production-readiness indicators, and live support nudges, then measure activation lift for self-serve merchants.",
+        watchout: "Compliance-heavy flows can easily overwhelm new businesses, so the challenge is sequencing friction rather than pretending friction can be removed.",
         metric: "% of signups completing first live transaction within 48 hours",
         frameworks: ["Activation funnel", "Developer experience design"]
       },
       {
         id: "phonepe",
         name: "PhonePe",
-        logo: "P",
         brand: "#5f259f",
         industry: "Payments + Fintech",
         stage: "Late-stage",
         hq: "Bengaluru",
         summary: "UPI trust is strong, but trust has not yet laddered into financial-product adoption.",
-        scale: "India's largest digital payments platform, with UPI at the core and expanding layers across insurance, lending, investments, and commerce.",
+        scale: "A population-scale payments platform with 700 million registered users and more than 50 million merchants as of late April 2026, expanding beyond UPI into insurance, lending, investments, and commerce.",
         product: "A payments-led super app that starts with habitual money movement and then layers adjacent financial products.",
         insight: "Financial product discovery is broken because most users experience PhonePe as a utilitarian UPI tool, not as a financial relationship. Cross-sell suffers when the product asks for high-trust behavior before it has progressively earned that trust.",
+        whyNow: "PhonePe has the rare advantage of recurring payments habit. That makes it a prime candidate for progressive monetization, but only if financial-product exposure feels contextually earned instead of commercially aggressive.",
         opportunity: "Contextual nudges tied to behavioral maturity, such as surfacing a micro-investment or protection nudge after a sustained pattern of trusted UPI usage.",
+        testIdea: "Segment power UPI users by transaction consistency and test a single low-risk financial nudge after a trust threshold, comparing engagement against generic home-screen placement.",
+        watchout: "Over-pushing financial cross-sell inside a trusted payments surface can reduce perceived simplicity and weaken the core habit that made the platform valuable in the first place.",
         metric: "% of active UPI users who have engaged with at least one financial product",
         frameworks: ["Progressive trust building", "Behavioral triggers", "Cross-sell funnel"]
       },
       {
         id: "meesho",
         name: "Meesho",
-        logo: "M",
         brand: "#f43397",
         industry: "Value Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
         summary: "The reseller problem is confidence, not catalog size.",
-        scale: "A discovery-led commerce platform serving crore-scale shoppers with lakhs of sellers and a strong footprint across value-conscious Tier 2 and Tier 3 India.",
+        scale: "A multi-sided commerce platform designed to make internet shopping affordable for a billion Indians, with lakhs of sellers and a national logistics footprint built around value-conscious demand.",
         product: "Low-cost e-commerce and social-commerce behavior built around affordable discovery, reseller distribution, and pan-India seller enablement.",
         insight: "The reseller activation drop-off after the first share signals a confidence gap. Resellers do not fail because sharing is hard; they fail because the product does not help them predict what will convert inside their own network.",
+        whyNow: "Meesho's low-cost model is already a structural advantage. The next layer of leverage comes from helping suppliers and resellers feel smarter, not just cheaper.",
         opportunity: "AI-assisted catalog recommendations for resellers, grounded in network purchase history, customer segment behavior, and category momentum.",
+        testIdea: "Offer every new reseller a starter catalog shortlist based on price band, region, and network conversion patterns, then measure whether first-30-day sales depth improves.",
+        watchout: "Recommendation quality is the product. If the first few suggested catalogs do not convert, the user interprets the platform as noise rather than guidance.",
         metric: "% of resellers who make at least 3 sales in first 30 days",
         frameworks: ["Seller activation funnel", "Network-effect metrics", "Cohort retention"]
       },
       {
         id: "navi",
         name: "Navi Technologies",
-        logo: "N",
         brand: "#2563eb",
         industry: "Consumer Fintech",
         stage: "Growth",
         hq: "Bengaluru",
         summary: "Approval speed matters less if approved users still hesitate to disburse.",
-        scale: "A mass-market financial app spanning loans, insurance, UPI, and mutual funds, built around simplicity and accessibility for broad retail adoption.",
+        scale: "A full-stack digital finance app spanning UPI, loans, insurance, and mutual funds, positioned around simplicity, accessibility, and fully digital customer journeys.",
         product: "Simple consumer finance flows that bring lending, payments, and protection into one app.",
         insight: "Fast approval solves only half the problem. Users can still stall between approval and disbursement because approval does not remove uncertainty about what the loan means, how repayment feels, or whether now is the right moment to use it.",
+        whyNow: "As digital lending becomes faster everywhere, speed is no longer enough. The differentiator shifts to how well the product helps users cross the emotional gap between approval and action.",
         opportunity: "In-app loan usage guidance that translates approval into tangible next steps with EMI previews, use-case templates, and clearer post-approval confidence-building.",
+        testIdea: "Test a post-approval decision screen that personalizes EMI context, use-case guidance, and repayment visibility before the disbursal action.",
+        watchout: "The UX must reduce anxiety without hiding cost or risk, because trust in lending products is fragile and regulation-sensitive.",
         metric: "% of approved users who disburse within 7 days",
         frameworks: ["Post-approval activation", "Anxiety reduction UX", "Jobs-To-Be-Done"]
       },
       {
         id: "darwinbox",
         name: "Darwinbox",
-        logo: "D",
         brand: "#f97316",
         industry: "HR Tech / SaaS",
         stage: "Enterprise scale-up",
@@ -2316,14 +2293,16 @@
         scale: "An AI-powered global HCM platform positioned as a consumer-grade employee experience for enterprise HR processes.",
         product: "Cloud HCM software covering HR operations, employee self-service, manager workflows, and people systems at enterprise scale.",
         insight: "Enterprise adoption is admin-heavy by default. HR teams may champion the rollout, but employees and managers decide whether the product becomes a habit. Self-service value stays invisible when onboarding is generic and role-irrelevant.",
+        whyNow: "Modern HCM buying increasingly values usability, not just functional coverage. That creates product pressure to prove everyday relevance to end users, not only administrators.",
         opportunity: "Role-based onboarding flows that reveal the three highest-value actions for employees, managers, and HR admins immediately after first login.",
+        testIdea: "Introduce a first-week activation journey by persona and measure whether task completion and monthly active employee ratio improve across newly onboarded accounts.",
+        watchout: "Enterprise buyers tolerate complexity more than end users do, so a feature-rich surface can quietly depress adoption if the first session is not tightly curated.",
         metric: "Monthly active employees / total employees onboarded",
         frameworks: ["Role-based activation", "Feature discoverability", "DAU/MAU ratio"]
       },
       {
         id: "browserstack",
         name: "BrowserStack",
-        logo: "B",
         brand: "#ef4444",
         industry: "Developer Tools / SaaS",
         stage: "Global SaaS",
@@ -2332,14 +2311,16 @@
         scale: "A testing platform used by more than 50,000 customers across 135+ countries, with 6 million developer signups, 1 billion tests per year, and 3,500+ real devices and browsers.",
         product: "Cloud-based manual, automated, visual, accessibility, and device testing for web and mobile teams.",
         insight: "New users often run a single test and leave before they hit the emotional payoff of catching a meaningful cross-browser issue. That means the onboarding does not consistently manufacture the first aha moment.",
+        whyNow: "BrowserStack has widened into a platform, which is strategically powerful but also raises the risk that new users encounter product breadth before they encounter product value.",
         opportunity: "A guided first-test path that intentionally helps the user reproduce a real cross-browser or visual difference within the first 10 minutes.",
+        testIdea: "Create an optional first-run wizard that recommends a high-likelihood mismatch pair based on the user's stack and celebrates the first useful finding, not just the first executed test.",
+        watchout: "If the first-run flow feels synthetic or disconnected from the developer's real workflow, it may increase friction rather than accelerate activation.",
         metric: "% of new signups who run 3+ tests within first session",
         frameworks: ["Time-to-value optimization", "Developer onboarding", "Activation metrics"]
       },
       {
         id: "ather",
         name: "Ather Energy",
-        logo: "A",
         brand: "#16a34a",
         industry: "EV + Connected Mobility",
         stage: "Growth",
@@ -2348,39 +2329,46 @@
         scale: "A leading Indian electric two-wheeler brand combining vehicle hardware, charging infrastructure, and a connected software layer around ride data and service experience.",
         product: "Electric scooters supported by a companion app, ride telemetry, diagnostics, charging intelligence, and software-led ownership loops.",
         insight: "The physical scooter can win the first purchase, but connected software shapes ongoing habit and loyalty. Features like ride analytics and trip history deepen attachment, yet many riders never discover them in a meaningful enough way.",
+        whyNow: "As the EV category matures, hardware differentiation compresses and ownership experience becomes a bigger moat. That makes the app more important than a traditional accessory layer.",
         opportunity: "A post-ride and weekly summary loop that turns ride data into an emotionally sticky artifact: distance covered, efficiency, savings, and environmental impact.",
+        testIdea: "Roll out weekly ride summaries to new owners in their first 60 days, segmented by commute-heavy versus leisure-heavy riders, and compare app-open retention.",
+        watchout: "Notifications must feel rewarding rather than operational. If they read like telemetry spam, the habit loop breaks immediately.",
         metric: "% of riders who open the app at least once per week",
         frameworks: ["Engagement loops", "Notification strategy", "Habit formation"]
       },
       {
         id: "licious",
         name: "Licious",
-        logo: "L",
         brand: "#dc2626",
         industry: "Food Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
         summary: "Freshness has to feel believable before the first order happens.",
-        scale: "India's largest direct-to-consumer fresh meat and seafood brand, operating across 25+ cities with 80,000+ daily orders and its own controlled processing and cold-chain experience.",
+        scale: "India's largest D2C fresh meat and seafood brand, operating across 28 cities, 80,000+ daily orders, and a tightly controlled sourcing and cold-chain model.",
         product: "A farm-to-fork meat and seafood commerce experience built around trust, freshness, and full-stack quality control.",
         insight: "Fresh produce has a sensory trust problem. Users cannot smell, touch, or visually inspect the product, so the digital experience has to do more emotional work than a normal commerce product page.",
+        whyNow: "The first purchase barrier in this category is not awareness but confidence. If Licious can reduce first-order hesitation, it strengthens both conversion and category expansion.",
         opportunity: "A richer product detail experience with freshness indicators, cut guides, cooking videos, and chef-style recommendations that make quality feel easier to imagine.",
+        testIdea: "Upgrade PDP depth for high-intent SKUs and compare first-visit add-to-cart and repeat purchase for users who consumed freshness or cooking content.",
+        watchout: "More storytelling is only useful if it still keeps mobile checkout fast. Trust content that slows conversion can backfire.",
         metric: "Add-to-cart rate on first visit for new users",
         frameworks: ["Trust-building UX", "PDP optimization", "New user activation"]
       },
       {
         id: "udaan",
         name: "Udaan",
-        logo: "U",
         brand: "#0ea5e9",
         industry: "B2B Commerce",
         stage: "Late-stage",
         hq: "Bengaluru",
         summary: "B2B repeat behavior depends on relationship confidence, not only catalog depth.",
-        scale: "A large eB2B trade platform spanning FMCG, staples, fresh, pharma, logistics, and financing for retailers and small businesses across India.",
+        scale: "India's largest eB2B platform, operating across FMCG, staples, fresh, pharma, and logistics with technology, supply chain, and working-capital support for small businesses.",
         product: "Digital trade infrastructure for retailers, suppliers, logistics coordination, and working-capital support.",
         insight: "Retailers often trust people, not software. The challenge is not simply digitizing orders, but recreating the reliability and familiarity of a supplier relationship inside the product itself.",
+        whyNow: "B2B commerce has higher switching resistance than consumer commerce, which means repeat behavior compounds strongly once trust is earned. That makes relationship design a product priority, not just a sales function.",
         opportunity: "A dedicated My Account Manager experience powered by conversational AI and account context, able to suggest restock timing, remember order patterns, and act like a dependable digital rep.",
+        testIdea: "Test an order-history-aware assistant for frequent retailers in two high-repeat categories and measure reorder latency, repeat rate, and assisted basket size.",
+        watchout: "In B2B, bad recommendations cost real money and trust. The assistant has to feel reliable before it can feel smart.",
         metric: "% of buyers placing repeat orders within 30 days",
         frameworks: ["B2B relationship mapping", "Repeat purchase triggers", "AI-assisted personalization"]
       }
@@ -2552,7 +2540,6 @@
             <div class="accordion-row">
               <div class="accordion-title-group">
                 <div class="startup-head">
-                  <span class="logo-pill">${startup.logo}</span>
                   <div>
                     <div class="badge-row" style="margin-bottom: 0.4rem;">
                       <span class="meta-badge">${startup.industry}</span>
@@ -2569,7 +2556,7 @@
 
             <div class="badge-row">
               <span class="meta-badge"><i data-lucide="sparkles"></i>PM Lens</span>
-              <span class="meta-badge"><i data-lucide="building-2"></i>Logo placeholder</span>
+              <span class="meta-badge"><i data-lucide="file-text"></i>Research Note</span>
             </div>
 
             <div class="metric-panel">
@@ -2596,9 +2583,19 @@
                   <p>${startup.insight}</p>
                 </article>
 
+                <article class="card detail-card">
+                  <h4>Why this matters now</h4>
+                  <p>${startup.whyNow}</p>
+                </article>
+
                 <article class="card opportunity-box">
                   <h4>Opportunity Area</h4>
                   <p>${startup.opportunity}</p>
+                </article>
+
+                <article class="card detail-card">
+                  <h4>What I'd test first</h4>
+                  <p>${startup.testIdea}</p>
                 </article>
               </div>
 
@@ -2606,6 +2603,11 @@
                 <i data-lucide="gauge"></i>
                 ${startup.metric}
               </div>
+
+              <article class="card detail-card">
+                <h4>Execution watch-out</h4>
+                <p>${startup.watchout}</p>
+              </article>
 
               <article class="card detail-card">
                 <h4>Key frameworks applicable</h4>
@@ -2820,7 +2822,7 @@
 
     function setLastActiveLabel() {
       const label = document.getElementById("lastActiveLabel");
-      label.textContent = `Last active · ${formatDate(PORTFOLIO_UPDATED_AT)}`;
+      label.textContent = `Last active | ${formatDate(PORTFOLIO_UPDATED_AT)}`;
     }
 
     function showToast(message) {
@@ -2852,105 +2854,6 @@
     function bindCopyEmailButtons() {
       document.querySelectorAll("[data-copy-email]").forEach((button) => {
         button.addEventListener("click", copyEmail);
-      });
-    }
-
-    function escapePdfText(text) {
-      return text
-        .replace(/\\/g, "\\\\")
-        .replace(/\(/g, "\\(")
-        .replace(/\)/g, "\\)");
-    }
-
-    function buildPdfDocument(title, lines) {
-      const content = [
-        "BT",
-        "/F1 24 Tf",
-        "72 748 Td",
-        `(${escapePdfText(title)}) Tj`,
-        "/F1 12 Tf"
-      ];
-
-      lines.forEach((line, index) => {
-        const offset = index === 0 ? -30 : -18;
-        content.push(`0 ${offset} Td`);
-        content.push(`(${escapePdfText(line)}) Tj`);
-      });
-
-      content.push("ET");
-
-      const stream = content.join("\n");
-      const objects = [
-        "1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj",
-        "2 0 obj\n<< /Type /Pages /Count 1 /Kids [3 0 R] >>\nendobj",
-        "3 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R >>\nendobj",
-        `4 0 obj\n<< /Length ${stream.length} >>\nstream\n${stream}\nendstream\nendobj`,
-        "5 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj"
-      ];
-
-      let pdf = "%PDF-1.4\n";
-      const offsets = [0];
-
-      objects.forEach((objectBody) => {
-        offsets.push(pdf.length);
-        pdf += `${objectBody}\n`;
-      });
-
-      const xrefStart = pdf.length;
-      pdf += `xref\n0 ${objects.length + 1}\n`;
-      pdf += "0000000000 65535 f \n";
-      offsets.slice(1).forEach((offset) => {
-        pdf += `${String(offset).padStart(10, "0")} 00000 n \n`;
-      });
-      pdf += `trailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xrefStart}\n%%EOF`;
-
-      return new Blob([pdf], { type: "application/pdf" });
-    }
-
-    function downloadResume(type) {
-      const isApm = type === "apm";
-      const fileName = isApm ? "Prajwal_PC_APM_Resume.pdf" : "Prajwal_PC_BA_Resume.pdf";
-      const title = isApm ? "Prajwal P C - APM Resume Snapshot" : "Prajwal P C - BA Resume Snapshot";
-      const lines = isApm
-        ? [
-            "Associate Product Manager / Business Analyst",
-            "Bengaluru, Karnataka | +91 9353756447",
-            "Email: Prajwalpanthu@gmail.com",
-            "LinkedIn: linkedin.com/in/prajwalpchandrashekar",
-            "Positioning: I find the problem behind the problem, then build the case to fix it.",
-            "MCA graduate with a technical foundation in Python, Flask, and React.",
-            "Case studies: food delivery cancellation, ecommerce checkout, grocery reorder.",
-            "Frameworks: 5 Whys, JTBD, North Star Metric, RICE, OKRs.",
-            "Open to APM and Product Analyst roles in Bengaluru."
-          ]
-        : [
-            "Business Analyst / Product Analyst Resume Snapshot",
-            "Bengaluru, Karnataka | +91 9353756447",
-            "Email: Prajwalpanthu@gmail.com",
-            "LinkedIn: linkedin.com/in/prajwalpchandrashekar",
-            "Strengths: problem framing, requirement clarity, root-cause analysis, structured communication.",
-            "Technical grounding in Python, Flask, React, REST APIs, and dashboard thinking.",
-            "Case study approach anchored in user stories, acceptance criteria, and measurable outcomes.",
-            "Open to BA, Product Analyst, and APM opportunities in Bengaluru."
-          ];
-
-      const blob = buildPdfDocument(title, lines);
-      const url = URL.createObjectURL(blob);
-      const anchor = document.createElement("a");
-      anchor.href = url;
-      anchor.download = fileName;
-      document.body.appendChild(anchor);
-      anchor.click();
-      anchor.remove();
-      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      showToast(`${isApm ? "APM" : "BA"} resume downloaded`);
-    }
-
-    function bindResumeDownloads() {
-      document.querySelectorAll("[data-download]").forEach((button) => {
-        button.addEventListener("click", () => {
-          downloadResume(button.dataset.download);
-        });
       });
     }
 
@@ -2991,7 +2894,6 @@
       initializeMenu();
       setLastActiveLabel();
       bindCopyEmailButtons();
-      bindResumeDownloads();
       initializeContactForm();
       syncOpenAccordions();
       window.addEventListener("resize", syncOpenAccordions);
